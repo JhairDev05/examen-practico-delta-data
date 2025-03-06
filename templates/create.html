@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+{% include 'partials/messages.html' %}
+
+<h2>Registrar Nuevo Crédito</h2>
+<form action="{{ url_for('creditos.create') }}" method="POST">
+    <label for="cliente">Cliente:</label>
+    <input type="text" id="cliente" name="cliente">
+
+    <label for="monto">Monto:</label>
+    <input type="number" step="0.01" id="monto" name="monto">
+
+    <label for="tasa_interes">Tasa de Interés:</label>
+    <input type="number" step="0.01" id="tasa_interes" name="tasa_interes">
+
+    <label for="plazo">Plazo (meses):</label>
+    <input type="number" id="plazo" name="plazo">
+
+    <label for="fecha_otorgamiento">Fecha de Otorgamiento:</label>
+    <input type="date" id="fecha_otorgamiento" name="fecha_otorgamiento">
+
+    <button type="submit">Guardar</button>
+</form>
+
+
+{% endblock %}

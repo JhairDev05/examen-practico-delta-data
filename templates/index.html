@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div>
+    <div class="table-container">
+
+        <h2>Lista de Créditos</h2>
+
+        <div class="btn-container">
+            <a href="{{ url_for('creditos.create') }}" class="btn-create">Crear</a>
+        </div>
+
+        {% include 'partials/messages.html' %}
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Monto</th>
+                    <th>Tasa de Interés</th>
+                    <th>Plazo</th>
+                    <th>Fecha de Otorgamiento</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for credito in creditos.items %}
+                <tr>
+                    <td>{{ credito.id }}</td>
+                    <td>{{ credito.cliente }}</td>
+                    <td>{{ credito.monto }}</td>
+                    <td>{{ credito.tasa_interes }}</td>
+                    <td>{{ credito.plazo }}</td>
+                    <td>{{ credito.fecha_otorgamiento }}</td>
+                    <td>
+                        <a href="{{ url_for('creditos.update', id=credito.id) }}">Editar</a>
+                        <!-- <a href="{{ url_for('creditos.delete', id=credito.id)}}" class="delete" id="delete-btn">Eliminar</a> -->
+                        <a href="{{ url_for('creditos.delete', id=credito.id) }}" class="delete"
+                            onclick="return confirm('¿Seguro que deseas eliminar este crédito?');">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination">
+        {% if creditos.has_prev %}
+        <a href="{{ url_for('creditos.index', page=creditos.prev_num) }}">← Anterior</a>
+        {% endif %}
+
+        <span>Página {{ creditos.page }} de {{ creditos.pages }}</span>
+
+        {% if creditos.has_next %}
+        <a href="{{ url_for('creditos.index', page=creditos.next_num) }}">Siguiente →</a>
+        {% endif %}
+    </div>
+
+    <div class="chart-container">
+        <h2>Total de Créditos</h2>
+        <canvas id="totalCreditosChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <h2>Créditos por cliente</h2>
+        <canvas id="creditosPorClienteChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <h2>Créditos por rango</h2>
+        <canvas id="creditosPorRangoChart"></canvas>
+    </div>
+
+    <script>
+        var totalCreditos = JSON.parse("{{ total_creditos | tojson | safe | default(0) }}");
+        var labelsClientes = JSON.parse('{{ labels_clientes | tojson | safe }}');
+        var dataClientes = JSON.parse('{{ data_clientes | tojson | safe }}');
+        var labelsRangos = JSON.parse('{{ labels_rangos | tojson | safe }}');
+        var dataRangos = JSON.parse('{{ data_rangos | tojson | safe }}');
+    </script>
+
+    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</div>
+
+{% endblock %}

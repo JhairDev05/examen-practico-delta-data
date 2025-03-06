@@ -1,0 +1,232 @@
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --danger-color: #d30b0b;
+    --danger-hover: #800707;
+    --background-light: #f4f4f9;
+    --text-color: #333;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end; /* Mueve el botón a la derecha */
+    margin-bottom: 10px; /* Espaciado entre el botón y la tabla */
+}
+
+.btn-create {
+    width: 10%;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-create:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-create:active {
+    transform: translateY(1px);
+}
+
+/* Estilos para la tabla */
+.table-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos para los botones de acciones */
+.actions a {
+    margin-right: 10px;
+}
+
+.delete {
+    color: var(--danger-color);
+}
+
+.delete:hover {
+    color: var(--danger-hover);
+}
+
+/* Estilos para la paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    margin: 0 10px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: var(--primary-hover);
+}
+
+.pagination span {
+    background-color: #6c757d;
+}
+
+/* Estilos para los contenedores de gráficos */
+.chart-container {
+    width: 80%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.chart-container h2 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+/* Estilos responsivos */
+@media (max-width: 1000px) {
+    .table-container {
+        width: 100%;
+    }
+
+    table {
+        font-size: 16px; /* Reducir el tamaño de la fuente */
+    }
+
+    th, td {
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .pagination {
+        flex-direction: column;
+    }
+
+    .pagination a, .pagination span {
+        margin: 5px 0;
+    }
+
+    .chart-container {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 480px) {
+    .table-container {
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    table {
+        width: 90%;
+        font-size: 12px; /* Reducir aún más el tamaño de la fuente */
+    }
+
+    th, td {
+        padding: 6px; /* Reducir aún más el padding */
+    }
+
+    .pagination a, .pagination span {
+        padding: 6px 12px;
+    }
+
+    .chart-container {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 390px) {
+    .table-container {
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    table {
+        width: 100%;
+        font-size: 10px; /* Reducir aún más el tamaño de la fuente */
+    }
+
+    th, td {
+        padding: 6px; /* Reducir aún más el padding */
+    }
+
+    .pagination a, .pagination span {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .chart-container {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 360px) {
+    table {
+        width: 100%;
+        font-size: 8px; /* Reducir aún más el tamaño de la fuente */
+    }
+}

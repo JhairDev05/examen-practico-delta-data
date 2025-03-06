@@ -1,0 +1,12 @@
+{% with messages = get_flashed_messages(with_categories=True) %}
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+
+    {% if messages %}
+        {% for category, message in messages %}
+        <h2 class="message {{ category }}" id="message">{{ message }}</h2>
+        {% endfor %}
+    {% endif %}
+
+{% endwith %}

@@ -1,82 +1,102 @@
-📊 Aplicación de Gestión de Créditos con Flask
+# 📊 Aplicación de Gestión de Créditos con Flask
 
 Esta aplicación permite gestionar créditos mediante operaciones CRUD (Crear, Leer, Actualizar y Eliminar), además de visualizar gráficos con el total de créditos otorgados.
 
-📌 Características
+---
 
-Crear, listar, actualizar y eliminar créditos.
+## 📌 Características
 
-Validación de formularios.
+✅ Crear, listar, actualizar y eliminar créditos.  
+✅ Validación de formularios.  
+✅ Confirmación antes de eliminar un registro.  
+✅ Gráficos dinámicos del total de créditos otorgados.  
 
-Confirmación antes de eliminar un registro.
+---
 
-Gráficos dinámicos del total de créditos otorgados.
-
-📋 Requisitos previos
+## 📋 Requisitos previos
 
 Asegúrate de tener instalado lo siguiente:
 
-Python 3.10 o superior
+- **Python 3.10 o superior**
+- **pip** (administrador de paquetes de Python)
 
-pip (administrador de paquetes de Python)
+---
 
-📦 Instalación
+## 📦 Instalación
 
-Clona este repositorio:
+1. **Clona este repositorio:**
 
+```bash
 git clone <URL_DEL_REPOSITORIO>
 cd nombre-del-repositorio
+```
 
-Crea un entorno virtual (opcional pero recomendado):
+2. **Crea un entorno virtual** (opcional pero recomendado):
 
-En Linux/MacOS:
+- En **Linux/MacOS**:
 
-python -m venv venv
-source venv/bin/activate
+    ```bash
+    python -m venv venv
+    source venv/bin/activate
+    ```
 
-En Windows:
+- En **Windows**:
 
-python -m venv venv
-venv\Scripts\activate
+    ```bash
+    python -m venv venv
+    venv\Scripts\activate
+    ```
 
-Instala las dependencias:
+3. **Instala las dependencias:**
 
+```bash
 pip install -r requirements.txt
+```
 
-▶️ Ejecutar la aplicación
+---
+
+## ▶️ Ejecutar la aplicación
 
 Inicia la aplicación con el siguiente comando:
 
+```bash
 python index.py
+```
 
-Abre tu navegador y accede a:
+Luego, abre tu navegador y accede a:
 
-http://localhost:5000
+👉 [http://localhost:5000](http://localhost:5000)
 
-📊 Uso de la aplicación
+---
 
-Crear un crédito: Completa el formulario y envíalo para registrar un nuevo crédito.
+## 📊 Uso de la aplicación
 
-Actualizar un crédito: Haz clic en "Editar" para modificar un crédito existente.
+- **Crear un crédito:** Completa el formulario y envíalo para registrar un nuevo crédito.
+- **Actualizar un crédito:** Haz clic en "Editar" para modificar un crédito existente.
+- **Eliminar un crédito:** Haz clic en "Eliminar" y confirma la acción para borrar un crédito.
+- **Visualizar gráficos:** La aplicación muestra un gráfico con el total de créditos otorgados.
 
-Eliminar un crédito: Haz clic en "Eliminar" y confirma la acción para borrar un crédito.
+---
 
-Visualizar gráficos: La aplicación muestra un gráfico con el total de créditos otorgados.
+## 🔄 Actualizar dependencias
 
-🔄 Actualizar dependencias
+Si agregas nuevas librerías, actualiza el archivo `requirements.txt` con:
 
-Si agregas nuevas librerías, actualiza el archivo requirements.txt con:
-
+```bash
 pip freeze > requirements.txt
+```
 
-🧹 Desactivar el entorno virtual
+---
+
+## 🧹 Desactivar el entorno virtual
 
 Cuando termines, puedes salir del entorno virtual con:
 
+```bash
 deactivate
+```
 
-📄 Licencia
-
-Este proyecto se encuentra bajo la licencia MIT. Puedes usarlo y modificarlo libremente.
+---
 
 ¡Disfruta de la aplicación! 🚀
+

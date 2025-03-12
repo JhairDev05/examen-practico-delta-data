@@ -3,5 +3,5 @@ import os
 
 load_dotenv()
 
-sqlite = os.environ['SQLite']
-secret_key = os.environ['secret_key']
+sqlite = os.getenv('SQLite', 'sqlite:///creditos.db')
+secret_key = os.getenv('secret_key', 'palabraSuperSecreta')
